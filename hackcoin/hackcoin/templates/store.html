@@ -1,0 +1,36 @@
+{% extends "wrapper.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Don't wait 8 hours to mine it all, we delete blockchains after a few hours -->
+
+<div class="backb">
+    <a class="back" href="{{ url_for('index', username=username) }}">
+        <i class="angle left icon"></i> Back
+    </a>
+</div>
+<div class="store">
+    <div class="info">
+        HackCoin doesn't have many users yet. To encourage users we're offering a HackMIT answer
+        for a humble price of <b>{{ price }}</b> 
+        <img class="pp" width="16" src="{{ url_for('static', filename='img/hackcoin.png') }}" alt="">.
+        Please donate to the following address:
+    </div>
+    <div class="address">
+        {{ us['public'] }}
+    </div>
+    <div class="donation">
+        <p>
+        <b>So Far:</b> {{ us['donated'] }} <img class="sf" align="middle" width="32" src="{{ url_for('static', filename='img/hackcoin.png') }}" alt="">
+        </p>
+    </div>
+    {% if us['donated'] >= price %}
+        <div class="answer">
+            <p>
+                <i>Thanks for the donation, here is the answer as promised:</i>
+                <b>{{ answer }}</b>
+            </p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

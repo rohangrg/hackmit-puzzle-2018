@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Summary</h3>
+<p>A certain political party has reached out to us asking for help drawing the districts before an upcoming election. They need to win more seats in an oddly grid like state. Help them win while remaining within fairness criteria imposed by the local redistricting committee.</p>
+
+<h3>Technical Details</h3>
+<h4>Districts and Blocks</h4>
+<p>
+  The state is an $n$ by $n$ grid, composed of $n^2$ different blocks.
+  Sets of blocks can be combined into $D$ different districts.
+  Blocks are labeled by integers $0 \leq i \lt n^2$.
+  A block's coordinate is $(\lfloor i/n \rfloor, i\ \mathrm{mod}\ n)$, its neighbors are the blocks it shares a full side with.
+  You will be provided $a_i$ and $b_i$ for each district $i$, these are the number of voters of party A and B, respectively. The population of a block is $a_i + b_i$.
+  For this problem, $n = 10, D = 20$.
+</p>
+
+<h4>How To Win</h4>
+<p>
+  The client only cares about one thing: maximizing the number of districts party A expects to win.
+  Each voter in party X will vote for party X with a $60\%$ chance, and the other party with a $40\%$ chance.
+  The client is ok with the following approximations:
+  <ul>
+    <li>$\mathrm{Bin}(n, p) = \mathrm{N}(np, np(1-p))$</li>
+    <li>$\mathbb{E}[\text{number of districts party A wins}] = \sum_j \mathbb{P}(\text{party A wins district } j)$</li>
+  </ul>
+</p>
+
+<h4>Districting Requirements</h4>
+<p>
+  The redistricting committee has a few requirements for any redistricting plan:
+  <ul>
+    <li>Each block must be assigned to a single district.</li>
+    <li>Each district must have at least 1 block.</li>
+    <li>Each district is contiguous -- each block in a district is reachable by other blocks in that district.</li>
+  </ul>
+
+  The redistricting committee also cares about fairness so they inspect the following additional metrics:
+  <ul>
+    <li>District Population Imbalance - The sum of square differences between each district's population and the mean district population.</li>
+    <li>
+      Expected Efficiency Gap - The efficiency gap is a metric that is meant to quantitatively indicate gerrymandering.
+      First, compute the number of wasted votes for both parties. A wasted vote is any vote in a district where the party lost the election, or any vote beyond what was needed to win in a district where the party won.
+      Then take the subtract the number of wasted votes for party B from the number of wasted votes for party A and divide that number by total population.
+      A largely negative value is associated with gerrymandering in favor of party A.
+      Since this metric can only be computed given an election, the committee only cares about its value in expectation.
+    </li>
+  </ul>
+</p>
+
+<h4>The Other Consultant</h4>
+<p>
+  Our client has already reached out to another consultant, who has provided a solution with the following properties. You must submit a labeling that is at least as good in each metric.
+</p>
+
+<!-- {{ cv['ind'] }} -->
+
+<table class="requirements">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Competitor Value</th>
+      <th>Direction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected Party A Districts</td>
+      <td>{{ cv['districts'] }}</td>
+      <td>higher is better</td>
+    </tr>
+    <tr>
+      <td>District Population Imbalance</td>
+      <td>{{ cv['population'] }}</td>
+      <td>lower is better</td>
+    </tr>
+    <tr>
+      <td>Expected Efficiency Gap</td>
+      <td>{{ cv['efficiency_gap'] }}</td>
+      <td>higher is better</td>
+    </tr>
+  </tbody>
+</table>
+
+<a id="submission"></a>
+<h4>Submission</h4>
+
+<p>You can obtain your voter data at <a href="{{ url_for('serve_voters', token=token) }}">voters.json</a></p>
+<p>To submit an answer to this puzzle, submit JSON in this format:</p>
+<pre><code>
+[
+  [0, 1, 2],
+  [3, 4, 5]
+]
+</code></pre>
+This example signifies two districts, one containing blocks 0, 1, and 2. The other containing 3, 4, and 5.
+
+<form method="POST">
+  <textarea name="json" cols="80"></textarea>
+  <br />
+  <input type="submit" value="Evaluate" />
+</form>
+
+{% if answer %}
+<div class="submission-success">
+  <h4>Success!</h4>
+  You did it! The answer is <code>{{ answer }}</code>
+</div>
+{% endif %}
+
+{% if submission_error_message %}
+<div class="submission-error">
+  <h4>Submission Error</h4>
+<p>{{ submission_error_message }}</p>
+</div>
+{% endif %}
+
+{% endblock %}

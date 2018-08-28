@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #282828;
+    font-family: 'Roboto Slab', serif;
+}
+
+#content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+table {
+    width: 100%;
+}
+
+.code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12pt;
+    color: #333;
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}

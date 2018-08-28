@@ -1,0 +1,4 @@
+!hackcoin/core/constants.py
+!hackcoin/config.py
+*.json
+*.copy

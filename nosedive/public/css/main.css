@@ -1,0 +1,237 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+}
+
+#content {
+    width: 100%;
+    margin: auto;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-width: 1px;
+    border-radius: 50px;
+    border-style: solid;
+    transition: all 0.2s;
+}
+
+.button-success, .button-success:focus {
+    border-color: rgb(52, 196, 86);
+    background: transparent;
+    color: rgb(52, 196, 86);
+}
+
+.button-success:hover {
+    background: rgb(91, 202, 58);
+    color: white;
+}
+
+.button-warning, .button-warning:focus {
+    border-color: rgb(245, 187, 29);
+    background: transparent;
+    color: rgb(245, 187, 29);
+}
+
+.button-warning:hover {
+    background: rgb(245, 187, 29);
+    color: white;
+}
+
+.button-error, .button-error:focus {
+    border-color: rgb(255, 61, 61);
+    background: transparent;
+    color: rgb(255, 61, 61);
+}
+
+.button-error:hover {
+    background: rgb(255, 61, 61);
+    color: white;
+}
+
+.button-secondary, .button-secondary:focus {
+    border-color: rgb(120, 120, 120);
+    background: transparent;
+    color: rgb(120, 120, 120);
+}
+
+.button-secondary:hover {
+    background: rgb(120, 120, 120);
+    color: white;
+}
+
+/* HEADER DESIGN */
+header {
+    background-color: rgb(255, 189, 249);
+    padding: 20px;
+    box-shadow: #ccc 0 2px 6px;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+/* HEADER ALERTS */
+#alerts h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#alerts p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.alert-danger {
+    color: rgb(131, 0, 0);
+    background-color: rgb(241, 163, 163);
+}
+
+.alert-info {
+    color: rgb(36, 114, 119);
+    background-color: rgb(183, 255, 251);
+}
+
+.alert {
+    max-height: 0px;
+    transition: max-height 0.6s ease-out;
+    overflow: hidden;
+}
+
+.alert.active {
+    max-height: 300px;
+    transition: max-height 0.6s ease-out;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+/* PROFILE PANEL */
+
+#profile-panel {
+    background-color: #fcfcfc;
+    box-shadow: #ccc -2px 0px 5px;
+    margin: 0 auto;
+    padding: 0 30px 20px 30px;
+    z-index: 3;
+}
+
+#profile-table {
+    width: 100%;
+    margin: auto auto 20 auto;
+}
+
+#profile-table textarea {
+    outline: none;
+    resize: none;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+/* RATING PANEL */
+#rating-panel {
+    margin: 0 auto;
+    padding: 0 30px 20px 30px;
+}
+
+#rating-scale {
+    display: block;
+}
+
+#captcha {
+    width: 100%;
+}
+
+.g-recaptcha div {
+    margin: 20 auto;
+}
+
+#image-viewer {
+    width: 500px;
+    height: 500px;
+    margin: 30px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+
+/* FOOTER */
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: #ccc 0 -2px 6px;
+    background-color: rgb(255, 189, 249);
+    position: relative;
+    z-index: 10;
+}
+
+footer p {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* CHAT STYLING */
+#support {
+    height: 250px;
+    position: relative;
+}
+
+.chat-window {
+    text-align: left;
+    font-size: 10pt;
+    height: 195px;
+    overflow-y: scroll;
+}
+
+.chat-textbox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(112, 112, 112);
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all 0.2s;
+    background-color: transparent;
+    vertical-align: middle;
+}
+
+.chat-textbox:focus {
+    outline: none;
+    border-color: rgb(39, 238, 162);
+    transition: all 0.2s;
+}
+
+.message {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

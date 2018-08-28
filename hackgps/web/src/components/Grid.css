@@ -1,0 +1,21 @@
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700";
+body {
+  color: white;
+  background-color: #111;
+  font-family: "Roboto Mono"; }
+
+:local(.container) {
+  position: fixed;
+  left: 500px;
+  width: -webkit-calc(100% - 500px);
+  width: -moz-calc(100% - 500px);
+  width: calc(100% - 500px);
+  height: 100%;
+  overflow: auto; }
+
+@media screen and (max-width: 768px) {
+  :local(.container) {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    left: 0; } }

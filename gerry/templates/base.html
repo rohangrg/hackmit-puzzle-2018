@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Gerry</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <style type="text/css">
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+        margin-bottom: 30px;
+      }
+      .header {
+        text-align: center;
+        font-weight: bold;
+      }
+      .header .logo {
+        font-size: 100pt;
+        transform: rotate(-45deg);
+      }
+      .header .name {
+        font-size: 24pt;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      table.requirements {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.requirements th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table.requirements tr:last-child td {
+        border-bottom: none;
+      }
+      
+      a {
+        color: white;
+      }
+
+      .submission-error {
+        color: red;
+      }
+
+      .submission-success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">E</div>
+      <div class="name">E CORP</div>
+    </div>
+
+    <div class="content">
+      <h2>TICKET #CONSULT-49343</h2>
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+  </body>
+</html>

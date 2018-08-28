@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-family: 'Roboto';
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    font-family: 'Roboto Slab';
+    font-size: 2em;
+}
+
+.info {
+    width: 20rem;
+    text-align: center;
+}
+
+a {
+    font-family: 'Gaegu';
+    font-size: 1.5em;
+}

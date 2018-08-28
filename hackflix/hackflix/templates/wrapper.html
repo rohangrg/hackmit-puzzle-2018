@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/normalize/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/semantic/semantic.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/ckin/ckin.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.css') }}?v=0.4.1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
+
+    <!-- Javascript Libraries -->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{{ url_for('static', filename='vendor/semantic/semantic.min.js') }}"></script>
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>{% block title %}{% endblock %} &middot; {{ config['APP_NAME'] }}</title>
+    {% block head %}
+    {% endblock %}
+
+    {% block meta %}
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">
+      <div class="top-bar">
+          <div class="left-side">
+              <a href="{{ url_for('index', username=username) }}">
+                <img class="logo" height="30" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+              </a>
+              <a href="{{ url_for('index', username=username) }}">
+                <span class="browse">Browse</span>
+                <i class="caret down icon dd2"></i>
+              </a>
+          </div>
+          <div class="right-side">
+              <img width="50" src="{{ url_for('static', filename='img/user.png') }}" alt="">
+              <span class="username">{{ username }}</span>
+              <i class="caret down icon dd"></i>
+          </div>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <div class="footer">
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='vendor/ckin/ckin.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% block end %}
+    {% endblock %}
+  </body>
+</html>
+

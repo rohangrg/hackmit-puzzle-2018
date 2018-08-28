@@ -1,0 +1,24 @@
+{% extends "wrapper.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="movies">
+    {% for vid_row in videos | batch(4, None) %}
+    <div class="row">
+        {% for vid in vid_row %}
+            {% if vid %}
+                <a href="{{ url_for('render_player', username=username, id=vid) }}">
+                    <img class="thumbnail" width="250" src="
+                        {% if vid == 'puzzle' %}
+                            {{ url_for('static', filename='img/thumb.png') }}
+                        {% else %}
+                            {{ url_for('static', filename='vids/') }}{{ vid }}.png
+                        {% endif %}
+                    " alt="{{ vid }}">
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

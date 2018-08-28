@@ -1,0 +1,1 @@
+from hackgps.controllers.default import init_app_routes

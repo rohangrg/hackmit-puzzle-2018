@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pyc
+.webassets-cache
+.vscode
+*.aep
+ae/
+tools/
+vids/
+*.mp4
+.DS_Store

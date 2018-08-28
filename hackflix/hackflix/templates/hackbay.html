@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+      The Hack Bay - The universe's most well-designed bittorrent site
+  </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='hackbay.css') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/hackbay.ico') }}">
+  {% if should_reload %}
+  <meta http-equiv="refresh" content="30" />
+  {% endif %}
+</head>
+<body>
+  <div class="header">
+    <a href=""><img class="logo" src="{{ url_for('static', filename='img/thehackbay.png') }}"/></a>
+    <b><a href="">Browse Torrents</a></b>&nbsp;&nbsp;|&nbsp;&nbspUpload Torrents&nbsp;&nbsp;|&nbsp;
+    <a href="">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+    <a href="">TV shows</a>&nbsp;&nbsp;|&nbsp;
+    <a href="">Music</a>&nbsp;&nbsp;|&nbsp;
+    <a href="">Top 100</a>
+    <br/><input placeholder="Search here..." class="searchBox"/><button>Pirate Search</button><br/>
+    <label><input type="checkbox"/>Audio</label>
+    <label><input type="checkbox"/>Video</label>
+    <label><input type="checkbox"/>Applications</label>
+    <label><input type="checkbox"/>Games</label>
+    <label><input type="checkbox"/>Other</label>
+
+    <select>
+      <option value="0">All</option>
+      <optgroup label="Audio">
+        <option value="101">Music</option>
+        <option value="102">Audio books</option>
+        <option value="103">Sound clips</option>
+        <option value="104">FLAC</option>
+        <option value="199">Other</option>
+      </optgroup>
+      <optgroup label="Video">
+        <option value="201">Movies</option>
+        <option value="202">Movies DVDR</option>
+        <option value="203">Music videos</option>
+        <option value="204">Movie clips</option>
+        <option value="205">TV shows</option>
+        <option value="206">Handheld</option>
+        <option value="207">HD - Movies</option>
+        <option value="208">HD - TV shows</option>
+        <option value="209">3D</option>
+        <option value="299">Other</option>
+      </optgroup>
+      <optgroup label="Applications">
+        <option value="301">Windows</option>
+        <option value="302">Mac</option>
+        <option value="303">UNIX</option>
+        <option value="304">Handheld</option>
+        <option value="305">IOS (iPad/iPhone)</option>
+        <option value="306">Android</option>
+        <option value="399">Other OS</option>
+      </optgroup>
+      <optgroup label="Games">
+        <option value="401">PC</option>
+        <option value="402">Mac</option>
+        <option value="403">PSx</option>
+        <option value="404">XBOX360</option>
+        <option value="405">Wii</option>
+        <option value="406">Handheld</option>
+        <option value="407">IOS (iPad/iPhone)</option>
+        <option value="408">Android</option>
+        <option value="499">Other</option>
+      </optgroup>
+      <optgroup label="Other">
+        <option value="601">E-books</option>
+        <option value="602">Comics</option>
+        <option value="603">Pictures</option>
+        <option value="604">Covers</option>
+        <option value="605">Physibles</option>
+        <option value="699">Other</option>
+      </optgroup>
+    </select>
+  </div>
+  <h2>
+    <span>Upload torrent</span>
+  </h2>
+  <div class="content">
+      <div class="title">
+        [File Request] Adventure of HackMIT II (Hackflix Original Series)
+      </div>
+      <div class="details">
+        <br>
+        <p>
+        <a href="{{ url_for('index', username=username) }}">Hackflix</a> has a new DRM protection, and it hasn't been cracked yet. I am willing to give
+          out a HackMIT puzzle answer in exchange for a <b>clean</b> rip of the new Hackflix
+          original series.
+        </p>
+        <p>
+          - revalo
+        </p>
+        <br>
+      </div>
+  </div>
+  {% if not result %}
+  <form method="post" enctype="multipart/form-data">
+    <div class="content">
+      <div class="title">
+        Upload a file:
+      </div>
+      <div class="details">
+        <table>
+          <tr>
+            <td>File: (Max 10 MB)</td>
+            <td><input name="file" type="file"></button></td>
+          </tr>
+          
+          <tr><td><button type="submit">Submit File</button></td></tr>
+        </table>
+      </div>
+    </div>
+  </form>
+
+  {% if message %}
+  <div class="content">
+      <div class="title">
+        Error
+      </div>
+      <div class="details">
+        <br>
+        <p>
+          {{ message }}
+        </p>
+        <br>
+      </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  {% if result %}
+  <div class="content">
+      <div class="title">
+        Response from {{ result.sender }}
+      </div>
+      <div class="details">
+        <br>
+        <p>
+          {{ result.message | safe }}
+        </p>
+        <br>
+      </div>
+  </div>
+  {% endif %}
+
+  <div id="foot" style="text-align:center;margin-top:1em;">
+    <p>
+     <a href="">Login</a> | 
+     <a href="">Register</a> | 
+     <a href="">Language / Select language</a> |
+     <a href="">About</a> |
+     <a href="">Blog</a>
+     <br/>
+     <a href="">Usage policy</a> |
+     <a href="">TOR</a> |
+     <a href="">Doodles</a> |
+     <a href="">Forum</a> 
+     <br/>
+    </p>
+  </div>
+</body>

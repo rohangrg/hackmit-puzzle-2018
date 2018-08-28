@@ -1,0 +1,29 @@
+{% extends "wrapper.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="storec">
+    <a class="store-link" href="{{ url_for('render_store', username=username) }}">
+        Store <i class="shopping bag icon"></i>
+    </a>
+</div>
+<div class="main-logo">
+    <img src="{{ url_for('static', filename='img/hackcoin.png') }}"
+         width="150"
+         class="coin-logo">
+    <p class="logo-text">hackcoin</p>
+    <p class="undertext">The Best Blockchain</p>
+</div>
+<div class="buttons">
+    <a href="{{ url_for('static', filename='whitepaper.pdf') }}">
+        <div class="rounded">Read the Whitepaper</div>
+    </a>
+
+    <a href="{{ url_for('client_download', username=username) }}">
+        <div class="rounded">
+            <i class="download icon"></i>
+            Download Client
+        </div>
+    </a>
+</div>
+{% endblock %}

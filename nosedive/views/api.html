@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Boost API Reference</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/api.css">
+</head>
+
+<body>
+    <div id="content">
+
+        <h1>Boost<sup>&beta;</sup> API Reference</h1>
+        <table class="pure-table">
+            <tr>
+                <th><span class="code">/beta/api</span></th>
+                <td>
+                    <p>Retrieve the documentation for the Boost<sup>&beta;</sup> API.</p>
+                    <ul>
+                        <li><b>Request Type</b>: <span class="code">GET</span></li>
+                        <li><b>Arguments</b>:
+                            <ul>
+                                <li>None</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th><span class="code">/beta/signup</span></th>
+                <td>
+                    <p>Bring the user to the Prime Influencers Programme signup page.</p>
+                    <ul>
+                        <li><b>Request Type</b>: <span class="code">GET</span></li>
+                        <li><b>Arguments</b>:
+                            <ul>
+                                <li>None</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th><span class="code">/beta/signup</span></th>
+                <td>
+                    <p>Register a user for priority access to the Prime Influencers Programme.</p>
+                    <ul>
+                        <li><b>Request Type</b>: <span class="code">POST</span></li>
+                        <li><b>Arguments</b>:
+                            <ul>
+                                <li><span class="code">username</span>: The user's username.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th><span class="code">/beta/boost_rating</span></th>
+                <td>
+                    <p>(support access only) Artificially boost a user's rating. Only use if granted explicit permission by authorities.</p>
+                    <ul>
+                        <li><b>Request Type</b>: <span class="code">POST</span></li>
+                        <li><b>Arguments</b>:
+                            <ul>
+                                <li><span class="code">username</span>: The user's username.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+
+</html>

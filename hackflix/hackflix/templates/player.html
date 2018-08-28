@@ -1,0 +1,26 @@
+{% extends "wrapper.html" %}
+{% block title %}Player{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+var VIDEO_INFO_URL = "{{ url_for('serve_video_info', username=username, id=id) }}";
+</script>
+<div class="player-cont">
+    <div class="player ui basic segment">
+        <a class="back" href="{{ url_for('index', username=username) }}">
+            <i class="angle left icon"></i> Back
+        </a>
+        <br><br>
+        <video class="player-vid" data-overlay="1" data-title="{{ title }}"></video>
+        <div class="ui active dimmer">
+            <div class="ui indeterminate text loader" id="load-status">
+                {% if id == 'puzzle' %}
+                This might take a few minutes.
+                {% else %}
+                Get your popcorn.
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

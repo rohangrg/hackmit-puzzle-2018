@@ -1,0 +1,13 @@
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700";
+
+$sidebar-width: 500px;
+$subcell-dim: 60px;
+$cell-dim: $subcell-dim * 3;
+
+$bp-tablet: 768px;
+
+body {
+  color: white;
+  background-color: #111;
+  font-family: "Roboto Mono";
+}

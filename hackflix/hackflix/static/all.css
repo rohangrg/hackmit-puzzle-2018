@@ -1,0 +1,112 @@
+body head {
+  width: 100%;
+}
+
+body {
+  background-color: #141414;
+}
+
+.top-bar {
+  background-color: #000000CC;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.right-side {
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 2rem;
+}
+
+.movies {
+  padding-top: 7rem;
+}
+
+.row {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.thumbnail {
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.ph {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.username {
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 500;
+  padding-left: 1rem;
+}
+
+.dd {
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.dd2 {
+  color: #e50913;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.browse {
+  color: #e50913;
+  font-display: 'Roboto';
+  font-weight: 500;
+  font-size: 1.2em;
+  padding-left: 2rem;
+}
+
+.player-cont {
+  margin-top: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.player {
+  max-width: 1000px;
+}
+
+.back {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: white;
+}

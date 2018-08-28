@@ -1,0 +1,262 @@
+<html>
+
+<head>
+  <title>mySocialCredit</title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.slim.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/star-rating.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+  <script type="text/javascript">
+
+    $(() => {
+      var starRating = 3;
+
+      let addMessageToChatBox = (message) => {
+        $(".chat-window").append(`<div class="message">${message}</div>`);
+      };
+
+      let loadNewImage = (data, original) => {
+        if (!original) {
+          grecaptcha.reset();
+        }
+        $("#image-viewer").css("background-image", `url(${data})`);
+      }
+
+      let socket = io();
+
+      socket.emit('hello', window.location.pathname.split('/').pop());
+      socket.on('message', addMessageToChatBox);
+      socket.on('disconnected', () => {
+        addMessageToChatBox('Disconnected.');
+      });
+
+      socket.on('new-image', loadNewImage);
+
+      socket.on('rating-updated', (title, message, rating) => {
+        $("#info-alert-title").html(title);
+        $("#info-alert-body").html(message);
+        $("#info-alert").addClass("active");
+
+        setTimeout(() => {
+          $("#info-alert").removeClass("active")
+        }, 3000)
+
+        $("#current-rating").html(rating);
+      })
+
+      socket.on('cheating-detected', (title, message, rating) => {
+        $("#danger-alert-title").html(title);
+        $("#danger-alert-body").html(message);
+        $("#danger-alert").addClass("active");
+
+        setTimeout(() => {
+          $("#danger-alert").removeClass("active")
+        }, 3000)
+      })
+
+      $(".chat-textbox").on('keypress', (e) => {
+        if (e.which != 13) return;
+        socket.emit('message', $(e.target).val());
+        $(e.target).val('');
+      });
+
+      $("#star1").on('click', e => {
+        $("#rating-scale").removeClass('value-1');
+        $("#rating-scale").removeClass('value-2');
+        $("#rating-scale").removeClass('value-3');
+        $("#rating-scale").removeClass('value-4');
+        $("#rating-scale").removeClass('value-5');
+        $("#rating-scale").addClass('value-1');
+        starRating = 1;
+      })
+
+      $("#star2").on('click', e => {
+        $("#rating-scale").removeClass('value-1');
+        $("#rating-scale").removeClass('value-2');
+        $("#rating-scale").removeClass('value-3');
+        $("#rating-scale").removeClass('value-4');
+        $("#rating-scale").removeClass('value-5');
+        $("#rating-scale").addClass('value-2');
+        starRating = 2;
+      })
+
+      $("#star3").on('click', e => {
+        $("#rating-scale").removeClass('value-1');
+        $("#rating-scale").removeClass('value-2');
+        $("#rating-scale").removeClass('value-3');
+        $("#rating-scale").removeClass('value-4');
+        $("#rating-scale").removeClass('value-5');
+        $("#rating-scale").addClass('value-3');
+        starRating = 3;
+      })
+
+      $("#star4").on('click', e => {
+        $("#rating-scale").removeClass('value-1');
+        $("#rating-scale").removeClass('value-2');
+        $("#rating-scale").removeClass('value-3');
+        $("#rating-scale").removeClass('value-4');
+        $("#rating-scale").removeClass('value-5');
+        $("#rating-scale").addClass('value-4');
+        starRating = 4;
+      })
+
+      $("#star5").on('click', e => {
+        $("#rating-scale").removeClass('value-1');
+        $("#rating-scale").removeClass('value-2');
+        $("#rating-scale").removeClass('value-3');
+        $("#rating-scale").removeClass('value-4');
+        $("#rating-scale").removeClass('value-5');
+        $("#rating-scale").addClass('value-5');
+        starRating = 5;
+      })
+
+      $("#submit-rating").on('click', e => {
+        e.preventDefault();
+        let captcha = grecaptcha.getResponse();
+        socket.emit("rate", starRating, captcha);
+      });
+    });
+
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css"></link>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>mySocialCredit</h1>
+    <p>Welcome {{ username }}!</p>
+  </header>
+
+  <section id="alerts">
+    <div id="danger-alert" class="alert alert-danger">
+      <h1 id="danger-alert-title"></h1>
+      <p id="danger-alert-body"></p>
+    </div>
+    <div id="info-alert" class="alert alert-info">
+      <h1 id="info-alert-title"></h1>
+      <p id="info-alert-body"></p>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <div id="content" class="pure-g">
+    <div id="rating-panel" class="pure-u-2-3">
+
+      <div id="image-viewer">
+      </div> <!-- .image-viewer -->
+
+      <div id="rating-scale" class="rating value-3 color-default star-icon large direction-ltr color-ok noticeable">
+        <div class="star-container">
+          <div id="star1" class="star">
+            <i class="star-empty"></i>
+            <i class="star-filled"></i>
+          </div>
+
+          <div id="star2" class="star">
+            <i class="star-empty"></i>
+            <i class="star-filled"></i>
+          </div>
+
+          <div id="star3" class="star">
+            <i class="star-empty"></i>
+            <i class="star-filled"></i>
+          </div>
+
+          <div id="star4" class="star">
+            <i class="star-empty"></i>
+            <i class="star-filled"></i>
+          </div>
+
+          <div id="star5" class="star">
+            <i class="star-empty"></i>
+            <i class="star-filled"></i>
+          </div>
+        </div>
+      </div> <!-- .rating-scale -->
+
+      <div id="captcha">
+        <div class="g-recaptcha" data-sitekey="{{ key }}"></div>
+      </div> <!-- .captcha -->
+
+      <button id="submit-rating" class="pure-button button-secondary" type="submit" value="submit-rating">Rate!</button>
+
+    </div> <!-- .rating-panel -->
+
+
+    <div id="profile-panel" class="pure-u-1-3">
+      <h1>Your Profile</h1>
+
+      <form method="POST" action="/u/{{ username }}">
+        <table id="profile-table" class="pure-table">
+          <tr>
+            <th>Current rating</th>
+            <td><span id="current-rating">{{ rating }}</span></td>
+          </tr>
+
+          <tr>
+            <th>Bio</th>
+            <td>
+              {% if bioError %}
+              <p>Your bio is too big.</p>
+              {% endif %}
+              <textarea style="border: solid 1px lightgrey;" name="bio" id="new-bio-textarea" cols="30" rows="10" placeholder="{{ bio | safe }}"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Status</th>
+            <td>{{ status | safe }}</td>
+          </tr>
+        </table>
+
+        <button id="new-bio-submit" class="pure-button button-secondary" type="submit" value="update">Update Profile</button>
+      </form>
+
+      <hr /> {% if solution %}
+      <p>The solution is {{ solution }}.</p>
+      {% else %}
+      <p>Sorry, you need to have a credit rating of <strong>{{ solution_rating }} or higher</strong> in order to view this section.</p>
+      {% endif %}
+
+      <hr />
+
+      <!-- For qualifying prime influencers only -->
+      <div id="prime-influencers-only">
+        <h3>For Qualifying Prime Influencers Only</h3>
+        <h4>Thanks for working so hard to be the best of society. In case you ever need a boost, click below.</h4>
+        <form action="/u/{{ username }}/boost_rating" method="POST">
+          <input type="hidden" name="username" value="{{ username }}" />
+          <button type="submit" class="pure-button button-error" value="Boost">Boost</button>
+        </form>
+        <p>Want to join the <a href="/prime-influencers">Prime Influencers Programme</a>?
+           Get your credit rating <strong>over {{ qualifying_rating }}</strong> to qualify.</p>
+      </div>
+      <hr />
+
+      <!-- Support -->
+      <div id="support" class="chat">
+        <div class="chat-window"></div>
+        <input type="text" class="chat-textbox" placeholder="Send a message..." />
+      </div>
+      <!-- .support -->
+
+    </div>
+    <!-- .profile-panel -->
+  </div>
+  <!-- .content -->
+
+  <footer>
+    <p>&copy; 2018 Social Rating Systems&trade;</p>
+  </footer>
+</body>
+
+</html>

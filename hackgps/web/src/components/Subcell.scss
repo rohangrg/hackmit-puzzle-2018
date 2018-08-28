@@ -1,0 +1,82 @@
+@import 'constants.scss';
+
+:local(.container) {
+  width: $cell-dim / 3;
+  height: $cell-dim / 3;
+  position: absolute;
+}
+
+:local(.car) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url('../img/car.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+:local(.house) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-image: url('../img/house.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@for $dr from 0 through 2 {
+  @for $dc from 0 through 2 {
+    :local(.subcell#{$dr}#{$dc}) {
+      top: $dr * $cell-dim / 3;
+      left: $dc * $cell-dim / 3;
+    }
+  }
+}
+
+%r {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 100% 100%;
+}
+
+:local(.r0000) {
+  @extend %r;
+  background-image: url('../img/0000.svg');
+}
+
+:local(.r1000) {
+  @extend %r;
+  background-image: url('../img/1000.svg');
+}
+
+:local(.r1100) {
+  @extend %r;
+  background-image: url('../img/1100.svg');
+}
+
+:local(.r1010) {
+  @extend %r;
+  background-image: url('../img/1010.svg');
+}
+
+:local(.r1110) {
+  @extend %r;
+  background-image: url('../img/1110.svg');
+}
+
+:local(.r1111) {
+  @extend %r;
+  background-image: url('../img/1111.svg');
+}
+
+:local(.r2010) {
+  @extend %r;
+  background-image: url('../img/2010.svg');
+}

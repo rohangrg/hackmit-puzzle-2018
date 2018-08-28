@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- FIXME: Filter button is broken. -->
+
+<!--
+
+                  _      _                    _ 
+  /\  /\__ _  ___| | __ /_\  _ __   __ _  ___| |
+ / /_/ / _` |/ __| |/ ///_\\| '_ \ / _` |/ _ \ |
+/ __  / (_| | (__|   </  _  \ | | | (_| |  __/ |
+\/ /_/ \__,_|\___|_|\_\_/ \_/_| |_|\__, |\___|_|
+                                   |___/        
+      
+
+               HackAngel v12.6-rc3
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HackAngel</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+</head>
+<body>
+    <div class="entry2">
+        <img width="240" src="{{ url_for('static', filename='img/angel.png') }}" alt="">
+        <p class="angel-user">{{ username }}</p>
+
+        <img width="150" class="angel-button-i" src="{{ url_for('static', filename='img/enter_button.png') }}" alt="">
+        <p class="angel-button">sight stream</p>
+    </div>
+    <div class="vids-container">
+        <video width="720" id="a" class="underlay" src="{{ answer_url }}" loop></video>
+        <video width="720" id="b" class="blur" src="{{ url_for('static', filename='media/blur.mp4') }}" loop></video>        
+    </div>
+    <div class="support">
+        <img width="150" class="filter" src="{{ url_for('static', filename='img/filter.png') }}" alt="">
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='popcorn.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

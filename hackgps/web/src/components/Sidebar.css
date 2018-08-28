@@ -1,0 +1,61 @@
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700";
+body {
+  color: white;
+  background-color: #111;
+  font-family: "Roboto Mono"; }
+
+:local(.container) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 500px;
+  height: 100vh;
+  background-color: #222;
+  z-index: 3;
+  overflow-y: scroll; }
+
+:local(.inner) {
+  margin: 20px;
+  overflow-y: scroll; }
+
+:local(.button) {
+  color: white;
+  background-color: #F44;
+  border-radius: 2px;
+  border: 1px solid #B22;
+  font-family: 'Roboto Mono';
+  margin-left: 5px; }
+  :local(.button):hover {
+    background-color: #C33; }
+
+:local(.movebutton) {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  font-size: 1.5em;
+  color: #222;
+  background-color: white; }
+  :local(.movebutton):hover {
+    background-color: #DDD; }
+
+:local(table) {
+  margin: auto; }
+
+:local(td) {
+  width: 50px;
+  height: 50px;
+  padding: 0px; }
+
+:local(.footer) {
+  position: fixed;
+  left: 5px;
+  bottom: 5px; }
+
+@media screen and (max-width: 768px) {
+  :local(.container) {
+    position: relative;
+    min-height: 100vh;
+    max-width: 100vw; }
+  :local(.footer) {
+    position: static; } }

@@ -1,0 +1,20 @@
+@import './constants.scss';
+
+:local(.container) {
+  position: absolute;
+  width: $cell-dim;
+  height: $cell-dim;
+}
+
+@for $dr from -2 through 2 {
+  @for $dc from -2 through 2 {
+    :local(.cell#{$dr}#{$dc}) {
+      top: -webkit-calc(50% + #{$cell-dim * $dr - $cell-dim / 2});
+      top:    -moz-calc(50% + #{$cell-dim * $dr - $cell-dim / 2});
+      top:         calc(50% + #{$cell-dim * $dr - $cell-dim / 2});
+      left: -webkit-calc(50% + #{$cell-dim * $dc - $cell-dim / 2});
+      left:    -moz-calc(50% + #{$cell-dim * $dc - $cell-dim / 2});
+      left:         calc(50% + #{$cell-dim * $dc - $cell-dim / 2});
+    }
+  }
+}

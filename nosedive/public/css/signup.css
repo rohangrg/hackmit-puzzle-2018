@@ -1,0 +1,71 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+#content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px 20px;
+}
+
+main {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 60pt;
+}
+
+.textbox-rounded {
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(161, 161, 161);
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: border-color 0.2s;
+    background-color: transparent;
+    vertical-align: middle;
+}
+
+.textbox-rounded:focus {
+    outline-style: none;
+    border-color: rgb(78, 78, 78);
+    transition: border-color 0.2s;
+}
+
+.button-rounded {
+    height: 40px;
+    color: white;
+    border-width: 1px;
+    border-radius: 50px;
+    border-style: solid;
+    transition: all 0.2s;
+}
+
+.button-rounded, .button-rounded:focus {
+    border-color: rgb(78, 78, 78);
+    background: transparent;
+    color: rgb(78, 78, 78);
+}
+
+.button-rounded:hover {
+    background: rgb(78, 78, 78);
+    color: white;
+}
+
+#username-textbox {
+    width: 70%;
+}
+
+#signup-button {
+    width: 20%;
+}

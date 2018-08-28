@@ -1,0 +1,76 @@
+body {
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: .7em;
+}
+
+a {
+    color: #009;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+a:hover {
+    border-bottom: 1px solid #000;
+}
+
+h2 {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    padding: 2px 5px;
+    border-bottom: 1px solid #D2B9A6;
+    background: #F6F1EE;
+    clear: both;
+}
+
+td {
+    border-bottom: 1px dashed #E8DCD2;
+    width: 350px;
+}
+
+td {
+    font-weight: bold;
+    vertical-align: top;
+    padding: 7px 0px 7px 0;
+    margin: 0;
+    color: #7B563A;
+}
+
+.logo {
+    width: 80px;
+    float: left;
+    padding-right: 15px;
+    margin-top: -10px;
+}
+
+.searchBox {
+    margin: 6px;
+    width: 300px;
+    padding: 2px;
+}
+
+.content {
+    background: #F6F1EE;
+    width: 650px;
+    margin: auto;
+}
+
+.title {
+    height: 1%;
+    background: #D2B9A6;
+    padding: 6px 0 8px 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.07em;
+    border-bottom: 1px solid #fff;
+}
+
+.description {
+    margin: 1em 0 1em 0;
+    width: 600px;
+    height: 300px;
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: .9em;
+    
+}

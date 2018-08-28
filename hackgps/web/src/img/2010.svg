@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <path d="M0 0L64 0L64 64L0 64L0 0Z" id="ctRee8qu"></path>
+    <path d="M12 0L52 0L52 64L12 64L12 0Z" id="b7KrXelDT"></path>
+    <path d="M28 14L24 6L32 6L40 6L36 14L32 22L28 14Z" id="a3raxz9vy4"></path>
+    <path d="M29 0L35 0L35 6L29 6L29 0Z" id="c1SARYKrB6"></path>
+  </defs>
+  <g><g><use xlink:href="#ctRee8qu" opacity="1" fill="#0a9200" fill-opacity="1"></use></g><g><use xlink:href="#b7KrXelDT" opacity="1" fill="#4e4e4e" fill-opacity="1"></use></g><g><use xlink:href="#a3raxz9vy4" opacity="1" fill="#ffd500" fill-opacity="1"></use></g><g><use xlink:href="#c1SARYKrB6" opacity="1" fill="#ffd500" fill-opacity="1"></use></g></g>
+</svg>

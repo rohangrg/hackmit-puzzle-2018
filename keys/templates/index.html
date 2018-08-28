@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lockpick</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Gaegu|Roboto|Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <p class="header">Lockpick Simulator 3000</p>
+
+    <p class="info">
+    You'be been recruited to be trained to be the master lock picker. We present you the finest lockpicking
+    training program, the Lockpick Simulator 3000.
+    </p>
+
+    <p class="info">
+    Your mission is to acheive more than a golden number lockpicks under 20 seconds. <b>Get a 100 lockpicks, and you will unlock the answer.</b>
+    </p>
+
+    <div class="dl">Download Lockpick Simulator 3000:</div><br>
+
+    <div class="downloads">
+        <a href="{{ url_for('build', username=username, platform='win') }}">Windows</a>&nbsp;
+        <a href="{{ url_for('build', username=username, platform='mac') }}">Mac</a>&nbsp;
+        <a href="{{ url_for('build', username=username, platform='linux') }}">Linux</a>
+    </div>
+</body>
+</html>

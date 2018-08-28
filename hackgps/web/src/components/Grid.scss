@@ -1,0 +1,22 @@
+@import 'constants.scss';
+
+:local(.container) {
+  position: fixed;
+
+  left: $sidebar-width;
+  width: -webkit-calc(100% - #{$sidebar-width});
+  width: -moz-calc(100% - #{$sidebar-width});
+  width: calc(100% - #{$sidebar-width});
+  height: 100%;
+
+  overflow: auto;
+}
+
+@media screen and (max-width : $bp-tablet) {
+  :local(.container) {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    left: 0;
+  }
+}

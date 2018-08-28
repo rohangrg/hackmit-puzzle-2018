@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <path d="M0 0L64 0L64 64L0 64L0 0Z" id="b1yjQUAgqf"></path>
+    <path d="M12 0L52 0L52 64L12 64L12 0Z" id="a18xpSzPL0"></path>
+  </defs>
+  <g><g><use xlink:href="#b1yjQUAgqf" opacity="1" fill="#0a9200" fill-opacity="1"></use></g><g><use xlink:href="#a18xpSzPL0" opacity="1" fill="#4e4e4e" fill-opacity="1"></use></g></g>
+</svg>
