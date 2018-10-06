@@ -1,7 +1,5 @@
 # HackGPS
 
-*DO NOT SHARE OUTSIDE HACKMIT*
-
 ## Premise
 
 You are helping navigate a self driving car. However, due to a bug, the car randomly disobeyes some of your directions. Can you get to the destination in time?
