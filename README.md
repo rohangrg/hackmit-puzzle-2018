@@ -30,7 +30,7 @@ Source code for each puzzle is in a separate folder of the repo.
 [license]: https://opensource.org/licenses/MIT
 [splash]: https://github.com/techx/hackmit-splash
 [2018-repo]: https://github.com/techx/hackmit-puzzle-2018
-[2018-write]: localhost
+[2018-write]: https://medium.com/hackmit-stories/hackmirror-the-hackmit-2018-puzzle-guide-39a7dfcb7559
 [2017-repo]: https://github.com/techx/hackmit-puzzle-2017
 [2017-write]: https://medium.com/hackmit-stories/time-traveling-in-the-puzzlelorean-the-hackmit-2017-puzzle-guide-40ee4fe797f1
 [2016-repo]: https://github.com/techx/hackmit-puzzle-2016
